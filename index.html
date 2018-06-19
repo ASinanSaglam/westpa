@@ -113,12 +113,8 @@ of WESTPA before posting issues to this list.</p>
   req.open("GET", 'static/download_counts.txt');
   req.send();
   var split = req.responseText.split(" ");
-  var count_1 = split[0];
-  var count_2 = split[1];
-  c1 = document.getElementById("count 1");
-  c2 = document.getElementById("count 2");
-  c1.innerText = count_1;
-  c2.innerText = count_2;
+  document.getElementById("count 1").innerText = split[0];
+  document.getElementById("count 2").innerText = split[1];
 </script>
 <div id="counters">
   <div id="counter 1"> count 1: <div id="count 1"> X </div> </div>
