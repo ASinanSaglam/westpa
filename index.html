@@ -118,10 +118,10 @@ of WESTPA before posting issues to this list.</p>
   req.onreadystatechange = function() {
     console.log(req.responseText);
     var split = req.responseText.split(" ");
+    document.getElementById("count 1").innerText = split[0];
+    document.getElementById("count 2").innerText = split[1];
   };
   req.send();
-  document.getElementById("count 1").innerText = split[0];
-  document.getElementById("count 2").innerText = split[1];
 </script>
 <!-- COUNTERS -->
 
