@@ -108,20 +108,21 @@ of WESTPA before posting issues to this list.</p>
 <p>To help us improve WESTPA please fill out a one-minute <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWaB2aryInU06cXrCyAFmhD_gPibgOfFk-dspLEsXuS9-RGQ/viewform">survey</a> and consider contributing documentation or code to the WESTPA community.</p>
 
 <!-- COUNTERS -->
-<script>
-  var req = new XMLHttpRequest();
-  req.open("GET", 'westpa/static/download_counts.txt');
-  req.onreadystatechange = function() {
-    var split = req.responseText.split(" ");
-  };
-  req.send();
-  document.getElementById("count 1").innerText = split[0];
-  document.getElementById("count 2").innerText = split[1];
-</script>
 <div id="counters">
   <div id="counter 1"> count 1: <div id="count 1"> X </div> </div>
   <div id="counter 2"> count 2: <div id="count 2"> Y </div> </div>
 </div>
+<script>
+  var req = new XMLHttpRequest();
+  req.open("GET", 'westpa/static/download_counts.txt');
+  req.onreadystatechange = function() {
+    console.log(req.responseText);
+  };
+  req.send();
+  var split = req.responseText.split(" ");
+  document.getElementById("count 1").innerText = split[0];
+  document.getElementById("count 2").innerText = split[1];
+</script>
 <!-- COUNTERS -->
 
 <h4>
