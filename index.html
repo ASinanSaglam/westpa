@@ -108,18 +108,14 @@ of WESTPA before posting issues to this list.</p>
 <p>To help us improve WESTPA please fill out a one-minute <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWaB2aryInU06cXrCyAFmhD_gPibgOfFk-dspLEsXuS9-RGQ/viewform">survey</a> and consider contributing documentation or code to the WESTPA community.</p>
 
 <!-- COUNTERS -->
-<input type="file" name="file" id="dl_file">
 <script>
-  document.getElementById("dl_file").onchange = function() {
-    var file = this.files[0];
-    var reader = new FileReader();
-    reader.onload = function(progressEvent){
-      alert(this.result)
-      var split = this.result.split(" ");
-      var count_1 = split[0]
-      var count_2 = split[1]
-    };
-    reader.readAsText(file);
+  var req = new XMLHttpRequest();
+  req.open("GET", '/static/download_count.txt');
+  req.onreadystatechange = function() {
+    alert(req.responseText);
+    var split = req.responseText.split(" ");
+    var count_1 = split[0];
+    var count_2 = split[1];
   };
   c1 = document.getElementById("count 1");
   c2 = document.getElementById("count 2");
