@@ -107,6 +107,41 @@ of WESTPA before posting issues to this list.</p>
 
 <p>To help us improve WESTPA please fill out a one-minute <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWaB2aryInU06cXrCyAFmhD_gPibgOfFk-dspLEsXuS9-RGQ/viewform">survey</a> and consider contributing documentation or code to the WESTPA community.</p>
 
+<!-- COUNTERS -->
+<script src="static/jquery.js"></script>
+<script>
+  function createCORSRequest(method, url){
+      var xhr = new XMLHttpRequest();
+      if ("withCredentials" in xhr){
+          // XHR has 'withCredentials' property only if it supports CORS
+          xhr.open(method, url, true);
+      } else if (typeof XDomainRequest != "undefined"){ // if IE use XDR
+          xhr = new XDomainRequest();
+          xhr.open(method, url);
+      } else {
+          xhr = null;
+      }
+      return xhr;
+  }
+  $(document).ready(function() {
+    var request = createCORSRequest( "get", "http://www.google.com" );
+    if ( request ){
+        // Define a callback function
+        request.onload = function(){};
+        // Send request
+        request.send();
+    }
+    $.get('http://cors-support.com/api', function( data ) {
+      alert( 'Successful cross-domain AJAX request.' );
+    });
+  });
+</script>
+<div id="counters">
+  <div id="counter 1"> count 1: <div id="count 1"> X </div> </div>
+  <div id="counter 2"> count 2: <div id="count 2"> Y </div> </div>
+</div>
+<!-- COUNTERS -->
+
 <h4>
   <a id="funding" class="anchor" href="#funding" aria-hidden="true"><span class="octicon octicon-link"></span></a>Funding</h3>
 <p>
