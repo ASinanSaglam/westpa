@@ -117,9 +117,9 @@ of WESTPA before posting issues to this list.</p>
   req.open("GET", 'static/download_counts.txt');
   req.onreadystatechange = function() {
     console.log(req.responseText);
+    var split = req.responseText.split(" ");
   };
   req.send();
-  var split = req.responseText.split(" ");
   document.getElementById("count 1").innerText = split[0];
   document.getElementById("count 2").innerText = split[1];
 </script>
