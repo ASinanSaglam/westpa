@@ -128,8 +128,10 @@ of WESTPA before posting issues to this list.</p>
   }
   request.onload = function() {
     var responseText = request.responseText;
-    console.log(responseText)
-    // parse the response
+    alert(responseText);
+    c1 = document.getElementById("count 1");
+    c2 = document.getElementById("count 2");
+    c1.innerText = responseText;
   };
   request.onerror = function() {
     console.log("There was an error!");
@@ -161,7 +163,7 @@ of WESTPA before posting issues to this list.</p>
 
         <p class="copyright">WESTPA maintained by <a href="https://github.com/westpa">westpa</a></p>
         <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-k     </footer>
+      </footer>
     </div>
 
     
