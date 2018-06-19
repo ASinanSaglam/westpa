@@ -126,6 +126,14 @@ of WESTPA before posting issues to this list.</p>
   if (!request) {
     throw new Error("CORS not supported");
   }
+  request.onload = function() {
+    var responseText = request.responseText;
+    console.log(responseText)
+    // parse the response
+  };
+  request.onerror = function() {
+    console.log("There was an error!");
+  };
 </script>
 <div id="counters">
   <div id="counter 1"> count 1: <div id="count 1"> X </div> </div>
